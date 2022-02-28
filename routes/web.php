@@ -17,7 +17,7 @@ Route::resource('tasks', TaskController::class)->middleware('auth');
 Route::resource('tasks', TaskController::class)->middleware('auth');
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
