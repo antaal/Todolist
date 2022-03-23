@@ -2,7 +2,7 @@
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             Liste des tâches        
-          <a href="{{ route('tasks.create') }}" role="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded float-right">Créer une tâche</a>
+          <a href="{{ route('tasks.create') }}" role="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded float-right" style="background: purple;">Créer une tâche</a>
         </h2>
     </x-slot>    
     <div class="py-12">
@@ -23,13 +23,13 @@
                   <tr>
                     <td class="px-4 py-3">{{ $task->title }}</td>
                     <td class="px-4 py-3">@if($task->state) Accomplie @else A faire @endif</td>
-                    <td class="px-4 py-3"><a href="{{ route('tasks.show', $task->id) }}" role="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Voir</a></td>
-                    <td class="px-4 py-3"><a href="{{ route('tasks.edit', $task->id) }}" role="button" class="bg-yellow-400 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded">Modifier</a></td>
+                    <td class="px-4 py-3"><a href="{{ route('tasks.show', $task->id) }}" role="button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" style="background: blue;">Voir</a></td>
+                    <td class="px-4 py-3"><a href="{{ route('tasks.edit', $task->id) }}" role="button" class="bg-yellow-400 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded" style="background: green;">Modifier</a></td>
                     <td class="px-4 py-3">
                       <form id="destroy{{ $task->id }}" action="{{ route('tasks.destroy', $task->id) }}" method="POST">
                         @csrf
                         @method('DELETE')                      
-                        <a role="button" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                        <a role="button" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" style="background: red;"
                           onclick="event.preventDefault();
                           this.closest('form').submit();">
                           Supprimer

@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -17,7 +18,7 @@ Route::resource('tasks', TaskController::class)->middleware('auth');
 Route::resource('tasks', TaskController::class)->middleware('auth');
 
 Route::get('/', function () {
-    return view('dashboard');
+    return view('welcome');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

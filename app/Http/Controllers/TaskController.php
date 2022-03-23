@@ -45,10 +45,8 @@ $data = $request->validate([
     $task->detail = $request->detail;
     $task->save();
     return back()->with('message', "La tâche a bien été créée !"); 
-
     
-
-   }
+    }
 
     /**
      * Display the specified resource.
